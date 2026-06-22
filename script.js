@@ -9,6 +9,7 @@ const products = [
   { id: 6, name: 'Party Earrings', price: 699, icon: '🥂' }
 ];
 
+
 let cart = normalizeCart(JSON.parse(localStorage.getItem('cart') || '[]'));
 
 function normalizeCart(savedCart) {
