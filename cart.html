@@ -1,1 +1,40 @@
-<!DOCTYPE html><html><head><link rel='stylesheet' href='style.css'></head><body><div class='container'><h1>Shopping Cart</h1><div id='cart'></div><h2 id='total'></h2></div><script src='script.js'></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Cart | AR FASCOWELLS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="AR FASCOWELLS Home">
+      <img src="logo.jpg" class="logo" alt="AR FASCOWELLS logo">
+      <span>AR FASCOWELLS</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="cart-link" href="cart.html">Cart <span id="cartCount">0</span></a>
+    </nav>
+  </header>
+
+  <main class="container cart-page">
+    <p class="eyebrow">Review order</p>
+    <h1>Shopping Cart</h1>
+    <div id="cart" class="cart-list"></div>
+    <div class="cart-summary">
+      <h2 id="total">Total ₹0</h2>
+      <div class="cart-actions">
+        <button id="clearCart" class="secondary-btn" type="button">Clear Cart</button>
+        <button id="whatsappOrder" type="button">Send Order on WhatsApp</button>
+      </div>
+      <p class="small-note">Your cart items with quantity and total will be added automatically in the WhatsApp message.</p>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
