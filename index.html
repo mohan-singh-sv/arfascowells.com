@@ -1,9 +1,43 @@
-
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AR FASCOWELLS</title><link rel="stylesheet" href="style.css"></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AR FASCOWELLS | Golden Fashion Accessories</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<header><img src="logo.jpg" class="logo"><nav>
-<a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="cart.html">Cart</a></nav></header>
-<section class="hero"><h1>Elegant Fashion Accessories</h1><p>Earrings, Rings, Bangles & More</p></section>
-<div id="products" class="grid"></div>
-<script src="script.js"></script></body></html>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="AR FASCOWELLS Home">
+      <img src="logo.jpg" class="logo" alt="AR FASCOWELLS logo">
+      <span>AR FASCOWELLS</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="cart-link" href="cart.html">Cart <span id="cartCount">0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <p class="eyebrow">Golden shine for every occasion</p>
+      <h1>Elegant Fashion Accessories</h1>
+      <p class="hero-copy">Premium earrings, rings, bangles and party-ready sets crafted to make your style sparkle.</p>
+      <a class="hero-btn" href="#products">Shop Collection</a>
+    </section>
+
+    <section class="section-heading">
+      <p class="eyebrow">New arrivals</p>
+      <h2>Featured Accessories</h2>
+    </section>
+
+    <section id="products" class="grid" aria-live="polite"></section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
