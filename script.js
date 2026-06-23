@@ -12,7 +12,6 @@ const categories = [
       { id: 'kada', name: 'Kada', description: 'Bold kada styles with golden shine.' }
     ]
   },
-  
   {
     id: 'makeup',
     name: 'Makeup',
@@ -121,7 +120,7 @@ function renderCategories() {
     <button class="category-card ${selectedCategoryId === category.id ? 'active' : ''}" type="button" onclick="selectCategory('${category.id}')" style="animation-delay:${index * 70}ms">
       <span class="category-image" style="background:${category.image}" aria-hidden="true"><span>${category.icon}</span></span>
       <span class="category-name">${category.name}</span>
-      <span class="category-tagline">${category.tagline}</span>
+      <span class="category-tagline">${category.tagline}</span> 
     </button>
   `).join('');
 }
