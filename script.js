@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = '919999999999'; // Replace with your WhatsApp business number, including country code.
+const WHATSAPP_NUMBER = '918796260625'; // Replace with your WhatsApp business number, including country code.
 
 const products = [
   { id: 1, name: 'Luxury Earrings', price: 599, icon: '💛' },
