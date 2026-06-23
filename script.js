@@ -48,14 +48,7 @@ const categories = [
 ];
 
 const products = [
-  { id: 1, categoryId: 'bracelet-kada', subcategoryId: 'bracelets', name: 'Fashion Bracelet', price: 499, icon: '🌟' },
-  { id: 2, categoryId: 'bracelet-kada', subcategoryId: 'kada', name: 'Gold Kada', price: 999, icon: '✨' },
-  { id: 3, categoryId: 'makeup', subcategoryId: 'lip-makeup', name: 'Golden Lip Gloss', price: 349, icon: '💄' },
-  { id: 4, categoryId: 'makeup', subcategoryId: 'face-makeup', name: 'Glow Compact', price: 649, icon: '🌸' },
-  { id: 5, categoryId: 'women-bags', subcategoryId: 'handbags', name: 'Elegant Handbag', price: 1499, icon: '👜' },
-  { id: 6, categoryId: 'women-bags', subcategoryId: 'party-bags', name: 'Party Clutch Bag', price: 1199, icon: '👛' },
-  { id: 7, categoryId: 'watches', subcategoryId: 'women-watches', name: 'Classic Women Watch', price: 1299, icon: '⌚' },
-  { id: 8, categoryId: 'watches', subcategoryId: 'party-watches', name: 'Crystal Party Watch', price: 1699, icon: '💎' }
+  { id: 1, categoryId: 'makeup', subcategoryId: 'face-makeup', name: 'Viral makeup book, lipstick, blush, eyeshadow', price: 750, icon: '🌟' },
 ];
 
 let selectedCategoryId = null;
