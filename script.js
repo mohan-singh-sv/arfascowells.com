@@ -48,7 +48,7 @@ const categories = [
 ];
 
 const products = [
-  { id: 1, categoryId: 'makeup', subcategoryId: 'face-makeup', name: 'Viral makeup book, lipstick, blush, eyeshadow', price: 750, icon: '🌟' },
+  { id: 1, categoryId: 'makeup', subcategoryId: 'face-makeup', name: 'Viral makeup book, lipstick, blush, eyeshadow', price: 750, icon: 'https://res.cloudinary.com/shopviewmohan/image/upload/s--nVLbnGlv--/v1782229861/WhatsApp_Image_2026-06-23_at_21.04.42_hnoah3.jpg' },
 ];
 
 let selectedCategoryId = null;
@@ -161,10 +161,12 @@ function renderProducts() {
   if (productsTitle) productsTitle.textContent = subcategory.name;
   if (productsEyebrow) productsEyebrow.textContent = 'Products';
   if (productsIntro) productsIntro.textContent = 'Choose items from this sub category and add them to your cart.';
+//      // <div class="product-icon" aria-hidden="true">${product.icon}</div>
 
   productGrid.innerHTML = filteredProducts.map((product, index) => `
     <article class="card product-card" style="animation-delay:${index * 70}ms">
-      <div class="product-icon" aria-hidden="true">${product.icon}</div>
+      <image src="${product.icon}" alt="${product.name} icon" class="category-icon" aria-hidden="true">
+
       <h3>${product.name}</h3>
       <p>Beautiful golden/yellow theme accessory for a premium look.</p>
       <p class="price">₹${product.price}</p>
