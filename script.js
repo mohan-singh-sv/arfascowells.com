@@ -12,6 +12,7 @@ const categories = [
       { id: 'kada', name: 'Kada', description: 'Bold kada styles with golden shine.' }
     ]
   },
+  
   {
     id: 'makeup',
     name: 'Makeup',
