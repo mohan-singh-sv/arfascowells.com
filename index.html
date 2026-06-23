@@ -25,14 +25,31 @@
     <section class="hero">
       <div class="hero-glow"></div>
       <p class="eyebrow">Golden shine for every occasion</p>
-      <h1>Elegant Fashion Accessories</h1>
-      <p class="hero-copy">Premium earrings, rings, bangles and party-ready sets crafted to make your style sparkle.</p>
-      <a class="hero-btn" href="#products">Shop Collection</a>
+      <h1>Where Fashion Meets Elegance</h1>
+      <p class="hero-copy">Browse by category first, choose a sub category, then shop the products you love.</p>
+      <a class="hero-btn" href="#shopCategories">Shop Collection</a>
     </section>
 
-    <section class="section-heading">
-      <p class="eyebrow">New arrivals</p>
-      <h2>Featured Accessories</h2>
+    <section id="shopCategories" class="section-heading">
+      <p class="eyebrow">Step 1</p>
+      <h2>Shop By Category</h2>
+      <p class="section-copy">Select a category to view its sub categories.</p>
+    </section>
+
+    <section id="categoryGrid" class="category-grid" aria-label="Product categories"></section>
+
+    <section id="subcategorySection" class="section-heading" hidden>
+      <p class="eyebrow">Step 2</p>
+      <h2 id="subcategoryTitle">Sub Categories</h2>
+      <p class="section-copy">Choose one sub category to see products.</p>
+    </section>
+
+    <section id="subcategoryGrid" class="subcategory-grid" aria-label="Product sub categories"></section>
+
+    <section id="productsHeading" class="section-heading">
+      <p id="productsEyebrow" class="eyebrow">Step 3</p>
+      <h2 id="productsTitle">Products</h2>
+      <p id="productsIntro" class="section-copy">Products will appear here after your selection.</p>
     </section>
 
     <section id="products" class="grid" aria-live="polite"></section>

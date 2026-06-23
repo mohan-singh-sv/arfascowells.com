@@ -1,15 +1,65 @@
 const WHATSAPP_NUMBER = '918796260625'; // Replace with your WhatsApp business number, including country code.
 
-const products = [
-  { id: 1, name: 'Luxury Earrings', price: 599, icon: '💛' },
-  { id: 2, name: 'Gold Bangles', price: 999, icon: '✨' },
-  { id: 3, name: 'Diamond Ring', price: 1299, icon: '💍' },
-  { id: 4, name: 'Pearl Set', price: 1499, icon: '🤍' },
-  { id: 5, name: 'Fashion Bracelet', price: 499, icon: '🌟' },
-  { id: 6, name: 'Party Earrings', price: 699, icon: '🥂' }
+const categories = [
+  {
+    id: 'bracelet-kada',
+    name: 'Bracelet & Kada',
+    tagline: 'Statement wristwear for daily and party wear.',
+    image: 'linear-gradient(135deg, rgba(255,245,196,.95), rgba(245,197,66,.9)), radial-gradient(circle at 30% 30%, #fff 0 12%, transparent 13%)',
+    icon: '💫',
+    subcategories: [
+      { id: 'bracelets', name: 'Bracelets', description: 'Charm, chain and fashion bracelets.' },
+      { id: 'kada', name: 'Kada', description: 'Bold kada styles with golden shine.' }
+    ]
+  },
+  {
+    id: 'makeup',
+    name: 'Makeup',
+    tagline: 'Beauty essentials to complete your look.',
+    image: 'linear-gradient(135deg, rgba(255,234,238,.95), rgba(245,197,66,.78)), radial-gradient(circle at 72% 24%, #fff 0 10%, transparent 11%)',
+    icon: '💄',
+    subcategories: [
+      { id: 'lip-makeup', name: 'Lip Makeup', description: 'Glossy picks for a polished finish.' },
+      { id: 'face-makeup', name: 'Face Makeup', description: 'Glow-ready beauty accessories.' }
+    ]
+  },
+  {
+    id: 'women-bags',
+    name: 'Women Bags',
+    tagline: 'Elegant handbags for every occasion.',
+    image: 'linear-gradient(135deg, rgba(255,248,230,.95), rgba(180,122,18,.78)), radial-gradient(circle at 28% 70%, #fff 0 11%, transparent 12%)',
+    icon: '👜',
+    subcategories: [
+      { id: 'handbags', name: 'Handbags', description: 'Classic carry bags with premium style.' },
+      { id: 'party-bags', name: 'Party Bags', description: 'Compact bags for festive outfits.' }
+    ]
+  },
+  {
+    id: 'watches',
+    name: 'Watches',
+    tagline: 'Timeless designs with fashion sparkle.',
+    image: 'linear-gradient(135deg, rgba(255,255,255,.96), rgba(245,197,66,.86)), radial-gradient(circle at 75% 72%, #fff 0 13%, transparent 14%)',
+    icon: '⌚',
+    subcategories: [
+      { id: 'women-watches', name: 'Women Watches', description: 'Daily wear watches with elegant detail.' },
+      { id: 'party-watches', name: 'Party Watches', description: 'Dress watches for special moments.' }
+    ]
+  }
 ];
 
+const products = [
+  { id: 1, categoryId: 'bracelet-kada', subcategoryId: 'bracelets', name: 'Fashion Bracelet', price: 499, icon: '🌟' },
+  { id: 2, categoryId: 'bracelet-kada', subcategoryId: 'kada', name: 'Gold Kada', price: 999, icon: '✨' },
+  { id: 3, categoryId: 'makeup', subcategoryId: 'lip-makeup', name: 'Golden Lip Gloss', price: 349, icon: '💄' },
+  { id: 4, categoryId: 'makeup', subcategoryId: 'face-makeup', name: 'Glow Compact', price: 649, icon: '🌸' },
+  { id: 5, categoryId: 'women-bags', subcategoryId: 'handbags', name: 'Elegant Handbag', price: 1499, icon: '👜' },
+  { id: 6, categoryId: 'women-bags', subcategoryId: 'party-bags', name: 'Party Clutch Bag', price: 1199, icon: '👛' },
+  { id: 7, categoryId: 'watches', subcategoryId: 'women-watches', name: 'Classic Women Watch', price: 1299, icon: '⌚' },
+  { id: 8, categoryId: 'watches', subcategoryId: 'party-watches', name: 'Crystal Party Watch', price: 1699, icon: '💎' }
+];
 
+let selectedCategoryId = null;
+let selectedSubcategoryId = null;
 let cart = normalizeCart(JSON.parse(localStorage.getItem('cart') || '[]'));
 
 function normalizeCart(savedCart) {
@@ -53,11 +103,73 @@ function showToast(message) {
   setTimeout(() => toast.classList.remove('show'), 2200);
 }
 
+function getSelectedCategory() {
+  return categories.find(category => category.id === selectedCategoryId);
+}
+
+function getSelectedSubcategory() {
+  const category = getSelectedCategory();
+  return category?.subcategories.find(subcategory => subcategory.id === selectedSubcategoryId);
+}
+
+function renderCategories() {
+  const categoryGrid = document.getElementById('categoryGrid');
+  if (!categoryGrid) return;
+
+  categoryGrid.innerHTML = categories.map((category, index) => `
+    <button class="category-card ${selectedCategoryId === category.id ? 'active' : ''}" type="button" onclick="selectCategory('${category.id}')" style="animation-delay:${index * 70}ms">
+      <span class="category-image" style="background:${category.image}" aria-hidden="true"><span>${category.icon}</span></span>
+      <span class="category-name">${category.name}</span>
+      <span class="category-tagline">${category.tagline}</span>
+    </button>
+  `).join('');
+}
+
+function renderSubcategories() {
+  const subcategorySection = document.getElementById('subcategorySection');
+  const subcategoryGrid = document.getElementById('subcategoryGrid');
+  const subcategoryTitle = document.getElementById('subcategoryTitle');
+  if (!subcategorySection || !subcategoryGrid || !subcategoryTitle) return;
+
+  const category = getSelectedCategory();
+  if (!category) {
+    subcategorySection.hidden = true;
+    subcategoryGrid.innerHTML = '';
+    return;
+  }
+
+  subcategorySection.hidden = false;
+  subcategoryTitle.textContent = `${category.name} Sub Categories`;
+  subcategoryGrid.innerHTML = category.subcategories.map((subcategory, index) => `
+    <button class="subcategory-card ${selectedSubcategoryId === subcategory.id ? 'active' : ''}" type="button" onclick="selectSubcategory('${subcategory.id}')" style="animation-delay:${index * 70}ms">
+      <strong>${subcategory.name}</strong>
+      <span>${subcategory.description}</span>
+    </button>
+  `).join('');
+}
+
 function renderProducts() {
   const productGrid = document.getElementById('products');
+  const productsTitle = document.getElementById('productsTitle');
+  const productsEyebrow = document.getElementById('productsEyebrow');
+  const productsIntro = document.getElementById('productsIntro');
   if (!productGrid) return;
 
-  productGrid.innerHTML = products.map((product, index) => `
+  const subcategory = getSelectedSubcategory();
+  if (!selectedCategoryId || !selectedSubcategoryId || !subcategory) {
+    productGrid.innerHTML = '<div class="content-card empty-cart product-empty">Select a category, then choose a sub category to see matching products.</div>';
+    if (productsTitle) productsTitle.textContent = 'Products';
+    if (productsEyebrow) productsEyebrow.textContent = 'Step 3';
+    if (productsIntro) productsIntro.textContent = 'Products will appear here after your selection.';
+    return;
+  }
+
+  const filteredProducts = products.filter(product => product.subcategoryId === selectedSubcategoryId);
+  if (productsTitle) productsTitle.textContent = subcategory.name;
+  if (productsEyebrow) productsEyebrow.textContent = 'Products';
+  if (productsIntro) productsIntro.textContent = 'Choose items from this sub category and add them to your cart.';
+
+  productGrid.innerHTML = filteredProducts.map((product, index) => `
     <article class="card product-card" style="animation-delay:${index * 70}ms">
       <div class="product-icon" aria-hidden="true">${product.icon}</div>
       <h3>${product.name}</h3>
@@ -73,8 +185,28 @@ function renderProducts() {
   `).join('');
 }
 
+function renderShop() {
+  renderCategories();
+  renderSubcategories();
+  renderProducts();
+}
+
+function selectCategory(categoryId) {
+  selectedCategoryId = categoryId;
+  selectedSubcategoryId = null;
+  renderShop();
+  document.getElementById('subcategorySection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function selectSubcategory(subcategoryId) {
+  selectedSubcategoryId = subcategoryId;
+  renderShop();
+  document.getElementById('productsHeading')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 function addToCart(id) {
   const product = products.find(item => item.id === id);
+  if (!product) return;
   const cartItem = cart.find(item => item.id === id);
 
   if (cartItem) {
@@ -157,7 +289,7 @@ function clearCart() {
   showToast('Cart cleared');
 }
 
-renderProducts();
+renderShop();
 renderCart();
 updateCartCount();
 
