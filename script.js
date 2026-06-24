@@ -48,7 +48,158 @@ const categories = [
 ];
 
 const products = [
-  { id: 1, categoryId: 'makeup', subcategoryId: 'face-makeup', name: 'Viral makeup book, lipstick, blush, eyeshadow', price: 750, icon: 'https://res.cloudinary.com/shopviewmohan/image/upload/s--nVLbnGlv--/v1782229861/WhatsApp_Image_2026-06-23_at_21.04.42_hnoah3.jpg' },
+  {
+    id: 1,
+    categoryId: 'bracelet-kada',
+    subcategoryId: 'bracelets',
+    name: 'Fashion Bracelet',
+    price: 499,
+    icon: '🌟',
+    description: 'Adjustable fashion bracelet with golden polish for casual, festive and party looks.',
+    inBox: '1 Bracelet',
+    traits: 'Skin friendly, lightweight, easy to style',
+    specs: [
+      ['Material', 'Alloy'],
+      ['Color', 'Golden'],
+      ['Size', 'Adjustable'],
+      ['Occasion', 'Daily/Party'],
+      ['Care', 'Keep dry'],
+      ['Warranty', 'No']
+    ]
+  },
+  {
+    id: 2,
+    categoryId: 'bracelet-kada',
+    subcategoryId: 'kada',
+    name: 'Gold Kada',
+    price: 999,
+    icon: '✨',
+    description: 'Traditional kada with a premium golden finish and bold statement appeal.',
+    inBox: '1 Kada',
+    traits: 'Long lasting shine, smooth edges, premium finish',
+    specs: [
+      ['Material', 'Metal Alloy'],
+      ['Color', 'Gold'],
+      ['Size', 'Free Size'],
+      ['Occasion', 'Festive'],
+      ['Care', 'Avoid perfume'],
+      ['Warranty', 'No']
+    ]
+  },
+  {
+    id: 3,
+    categoryId: 'makeup',
+    subcategoryId: 'lip-makeup',
+    name: 'Golden Lip Gloss',
+    price: 349,
+    icon: '💄',
+    description: 'Glossy lip finish with comfortable texture for everyday touch-ups.',
+    inBox: '1 Lip Gloss',
+    traits: 'Long wearing, smooth texture, glossy extension',
+    specs: [
+      ['Shade', 'Multicolor'],
+      ['Quantity', '8 ml'],
+      ['Skin Tone', 'All'],
+      ['Organic', 'No'],
+      ['Finish', 'Glossy'],
+      ['Care', 'Professional']
+    ]
+  },
+  {
+    id: 4,
+    categoryId: 'makeup',
+    subcategoryId: 'face-makeup',
+    name: 'Glow Compact',
+    price: 649,
+    icon: '🌸',
+    description: 'Compact face makeup palette for a clean glow and quick finishing touch.',
+    inBox: '1 Makeup Compact',
+    traits: 'Velvet fine texture, silky blend, travel friendly',
+    specs: [
+      ['Shade', 'Natural'],
+      ['Quantity', '60 g'],
+      ['Skin Tone', 'Light/Dusky'],
+      ['Organic', 'No'],
+      ['Process', 'Paraben Free'],
+      ['Care', 'Professional']
+    ]
+  },
+  {
+    id: 5,
+    categoryId: 'women-bags',
+    subcategoryId: 'handbags',
+    name: 'Elegant Handbag',
+    price: 1499,
+    icon: '👜',
+    description: 'Spacious handbag with elegant styling for office, daily and outing use.',
+    inBox: '1 Handbag',
+    traits: 'Premium look, roomy storage, comfortable handle',
+    specs: [
+      ['Material', 'PU Leather'],
+      ['Color', 'Tan/Gold'],
+      ['Compartments', '3'],
+      ['Closure', 'Zip'],
+      ['Occasion', 'Daily'],
+      ['Care', 'Wipe clean']
+    ]
+  },
+  {
+    id: 6,
+    categoryId: 'women-bags',
+    subcategoryId: 'party-bags',
+    name: 'Party Clutch Bag',
+    price: 1199,
+    icon: '👛',
+    description: 'Compact party clutch designed to pair beautifully with festive outfits.',
+    inBox: '1 Clutch Bag',
+    traits: 'Lightweight, party ready, elegant shine',
+    specs: [
+      ['Material', 'Satin/Metal'],
+      ['Color', 'Golden'],
+      ['Compartments', '1'],
+      ['Closure', 'Magnetic'],
+      ['Occasion', 'Party'],
+      ['Care', 'Keep dry']
+    ]
+  },
+  {
+    id: 7,
+    categoryId: 'watches',
+    subcategoryId: 'women-watches',
+    name: 'Classic Women Watch',
+    price: 1299,
+    icon: '⌚',
+    description: 'Classic analog watch with polished details for everyday elegance.',
+    inBox: '1 Watch',
+    traits: 'Comfort strap, clean dial, daily wear design',
+    specs: [
+      ['Dial', 'Analog'],
+      ['Strap', 'Metal'],
+      ['Color', 'Gold'],
+      ['Display', 'Quartz'],
+      ['Occasion', 'Daily'],
+      ['Waterproof', 'No']
+    ]
+  },
+  {
+    id: 8,
+    categoryId: 'watches',
+    subcategoryId: 'party-watches',
+    name: 'Crystal Party Watch',
+    price: 1699,
+    icon: '💎',
+    description: 'Crystal-style party watch with sparkle detail for special occasions.',
+    inBox: '1 Watch',
+    traits: 'Sparkling dial, premium finish, comfortable fit',
+    specs: [
+      ['Dial', 'Crystal'],
+      ['Strap', 'Bracelet'],
+      ['Color', 'Rose Gold'],
+      ['Display', 'Quartz'],
+      ['Occasion', 'Party'],
+      ['Waterproof', 'No']
+    ]
+  }
 ];
 
 let selectedCategoryId = null;
@@ -113,7 +264,7 @@ function renderCategories() {
     <button class="category-card ${selectedCategoryId === category.id ? 'active' : ''}" type="button" onclick="selectCategory('${category.id}')" style="animation-delay:${index * 70}ms">
       <span class="category-image" style="background:${category.image}" aria-hidden="true"><span>${category.icon}</span></span>
       <span class="category-name">${category.name}</span>
-      <span class="category-tagline">${category.tagline}</span> 
+      <span class="category-tagline">${category.tagline}</span>
     </button>
   `).join('');
 }
@@ -141,6 +292,38 @@ function renderSubcategories() {
   `).join('');
 }
 
+
+function renderProductDetails(product) {
+  return `
+    <div class="product-details">
+      <div class="detail-tabs" aria-label="Product information tabs">
+        <span class="detail-tab active">Specifications</span>
+        <span class="detail-tab">Description</span>
+      </div>
+      <div class="detail-section">
+        <h4>In the Box</h4>
+        <p>${product.inBox}</p>
+      </div>
+      <div class="detail-section">
+        <h4>Additional Traits</h4>
+        <p>${product.traits}</p>
+      </div>
+      <div class="detail-section">
+        <h4>General Traits</h4>
+        <p class="model-name">${product.description}</p>
+        <dl class="spec-grid">
+          ${product.specs.map(([label, value]) => `
+            <div class="spec-item">
+              <dt>${label}</dt>
+              <dd>${value}</dd>
+            </div>
+          `).join('')}
+        </dl>
+      </div>
+    </div>
+  `;
+}
+
 function renderProducts() {
   const productGrid = document.getElementById('products');
   const productsTitle = document.getElementById('productsTitle');
@@ -161,15 +344,15 @@ function renderProducts() {
   if (productsTitle) productsTitle.textContent = subcategory.name;
   if (productsEyebrow) productsEyebrow.textContent = 'Products';
   if (productsIntro) productsIntro.textContent = 'Choose items from this sub category and add them to your cart.';
-//      // <div class="product-icon" aria-hidden="true">${product.icon}</div>
 
   productGrid.innerHTML = filteredProducts.map((product, index) => `
     <article class="card product-card" style="animation-delay:${index * 70}ms">
       <image src="${product.icon}" alt="${product.name} icon" class="category-icon" aria-hidden="true">
 
       <h3>${product.name}</h3>
-      <p>Beautiful golden/yellow theme accessory for a premium look.</p>
+      <p>${product.description}</p>
       <p class="price">₹${product.price}</p>
+      ${renderProductDetails(product)}
       <button type="button" onclick="addToCart(${product.id})">Add To Cart</button>
       <div class="qty-controls" aria-label="Quantity controls for ${product.name}">
         <button type="button" onclick="changeQuantity(${product.id}, -1)">−</button>
