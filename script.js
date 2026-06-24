@@ -76,7 +76,7 @@ const products = [
     categoryId: 'homedecor',
     subcategoryId: 'mug',
     name: 'Mug, 200 mug , korean mug',
-    price: 200,
+    price: 90,
     icon: '🌟',
     images: [
       'https://res.cloudinary.com/shopviewmohan/image/upload/s--bJ0dT4yd--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/efefe_spstue.jpg',
@@ -439,7 +439,7 @@ function renderCart() {
   totalContainer.textContent = `Total ₹${getCartTotal()}`;
 }
 
-function sendWhatsAppOrder() {
+function sendWhatsAppOrderw() {
   if (cart.length === 0) {
     showToast('Please add items before sending order');
     return;
@@ -448,6 +448,35 @@ function sendWhatsAppOrder() {
   const orderLines = cart.map((item, index) => `${index + 1}. ${item.name} - Qty: ${item.qty} - ₹${item.price * item.qty}`);
   const message = `Hello AR FASCOWELLS, I want to order:\n\n${orderLines.join('\n')}\n\nTotal: ₹${getCartTotal()}`;
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+}
+
+function sendWhatsAppOrder() {
+  if (cart.length === 0) {
+    showToast('Please add items before sending order');
+    return;
+  }
+
+  const total = getCartTotal();
+
+  // Minimum order amount check
+  if (total < 499) {
+    showToast(`Minimum order amount is ₹499. Add ₹${499 - total} more to place your order.`);
+    return;
+  }
+
+  const orderLines = cart.map(
+    (item, index) =>
+      `${index + 1}. ${item.name} - Qty: ${item.qty} - ₹${item.price * item.qty}`
+  );
+
+  const message = `Hello AR FASCOWELLS, I want to order:\n\n${orderLines.join(
+    '\n'
+  )}\n\nTotal: ₹${total}`;
+
+  window.open(
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+    '_blank'
+  );
 }
 
 function clearCart() {
