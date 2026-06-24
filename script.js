@@ -47,6 +47,7 @@ const categories = [
   }
 ];
 
+
 const products = [
   {
     id: 1,
