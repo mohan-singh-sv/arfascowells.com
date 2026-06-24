@@ -47,22 +47,15 @@ const categories = [
   }
 ];
 
+
 const products = [
   {
     id: 1,
     categoryId: 'makeup',
     subcategoryId: 'face-makeup',
     name: 'Viral makeup book, lipstick, blush, eyeshadow',
-    price: 750,
-    icon: '🌟',
-    images: [
-      'https://res.cloudinary.com/shopviewmohan/image/upload/s--llOFI0H4--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/imm_nyf2e0.png',
-      'https://res.cloudinary.com/shopviewmohan/image/upload/s--llOFI0H4--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/imm_nyf2e0.png',
-      'https://res.cloudinary.com/shopviewmohan/image/upload/s--llOFI0H4--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/imm_nyf2e0.png',
-      'https://placehold.co/700x700/fff0aa/171109?text=Fashion+Bracelet+2',
-      'https://placehold.co/700x700/f5c542/171109?text=Fashion+Bracelet+3'
-    ],
-
+    price: 499,
+    icon: '',
     description: 'Adjustable fashion bracelet with golden polish for casual, festive and party looks.',
     inBox: '1 Bracelet',
     traits: 'Skin friendly, lightweight, easy to style',
@@ -75,38 +68,11 @@ const products = [
       ['Warranty', 'No']
     ]
   },
-  {
-    id: 1,
-    categoryId: 'makeup',
-    subcategoryId: 'face-makeup',
-    name: 'Viral makeup book, lipstick, blush, eyeshadow',
-    price: 750,
-    icon: '🌟',
-    images: [
-      'https://res.cloudinary.com/shopviewmohan/image/upload/s--llOFI0H4--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/imm_nyf2e0.png',
-      'https://res.cloudinary.com/shopviewmohan/image/upload/s--llOFI0H4--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/imm_nyf2e0.png',
-      'https://res.cloudinary.com/shopviewmohan/image/upload/s--llOFI0H4--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/imm_nyf2e0.png',
-      'https://placehold.co/700x700/fff0aa/171109?text=Fashion+Bracelet+2',
-      'https://placehold.co/700x700/f5c542/171109?text=Fashion+Bracelet+3'
-    ],
 
-    description: 'Adjustable fashion bracelet with golden polish for casual, festive and party looks.',
-    inBox: '1 Bracelet',
-    traits: 'Skin friendly, lightweight, easy to style',
-    specs: [
-      ['Material', 'Alloy'],
-      ['Color', 'Golden'],
-      ['Size', 'Adjustable'],
-      ['Occasion', 'Daily/Party'],
-      ['Care', 'Keep dry'],
-      ['Warranty', 'No']
-    ]
-  },
 ];
 
 let selectedCategoryId = null;
 let selectedSubcategoryId = null;
-const productImageIndexes = {};
 let cart = normalizeCart(JSON.parse(localStorage.getItem('cart') || '[]'));
 
 function normalizeCart(savedCart) {
@@ -196,67 +162,6 @@ function renderSubcategories() {
 }
 
 
-
-function getProductImages(product) {
-  return Array.isArray(product.images) && product.images.length > 0 ? product.images : [];
-}
-
-function getProductImageIndex(product) {
-  const images = getProductImages(product);
-  const currentIndex = productImageIndexes[product.id] || 0;
-  return images.length ? currentIndex % images.length : 0;
-}
-
-function renderProductImageSlider(product) {
-  const images = getProductImages(product);
-  if (!images.length) {
-    return `<div class="product-icon product-image-fallback" aria-hidden="true">${product.icon}</div>`;
-  }
-
-  const activeIndex = getProductImageIndex(product);
-  const activeImage = images[activeIndex];
-  const controls = images.length > 1 ? `
-    <button class="slider-btn prev" type="button" onclick="changeProductImage(${product.id}, -1)" aria-label="Previous image for ${product.name}">‹</button>
-    <button class="slider-btn next" type="button" onclick="changeProductImage(${product.id}, 1)" aria-label="Next image for ${product.name}">›</button>
-  ` : '';
-  const dots = images.length > 1 ? `
-    <div class="slider-dots" aria-label="Choose image for ${product.name}">
-      ${images.map((_, index) => `
-        <button class="slider-dot ${index === activeIndex ? 'active' : ''}" type="button" onclick="selectProductImage(${product.id}, ${index})" aria-label="Show image ${index + 1} for ${product.name}"></button>
-      `).join('')}
-    </div>
-  ` : '';
-
-  return `
-    <div class="product-slider">
-      <img src="${activeImage}" alt="${product.name} image ${activeIndex + 1}" loading="lazy">
-      ${controls}
-      ${dots}
-    </div>
-  `;
-}
-
-function changeProductImage(productId, direction) {
-  const product = products.find(item => item.id === productId);
-  if (!product) return;
-  const images = getProductImages(product);
-  if (images.length <= 1) return;
-
-  const currentIndex = getProductImageIndex(product);
-  productImageIndexes[productId] = (currentIndex + direction + images.length) % images.length;
-  renderProducts();
-}
-
-function selectProductImage(productId, imageIndex) {
-  const product = products.find(item => item.id === productId);
-  if (!product) return;
-  const images = getProductImages(product);
-  if (!images[imageIndex]) return;
-
-  productImageIndexes[productId] = imageIndex;
-  renderProducts();
-}
-
 function renderProductDetails(product) {
   return `
     <div class="product-details">
@@ -311,7 +216,8 @@ function renderProducts() {
 
   productGrid.innerHTML = filteredProducts.map((product, index) => `
     <article class="card product-card" style="animation-delay:${index * 70}ms">
-      ${renderProductImageSlider(product)}
+      <image src="${product.icon}" alt="${product.name} icon" class="category-icon" aria-hidden="true">
+
       <h3>${product.name}</h3>
       <p>${product.description}</p>
       <p class="price">₹${product.price}</p>
