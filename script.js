@@ -47,7 +47,6 @@ const categories = [
   }
 ];
 
-
 const products = [
   {
     id: 1,
@@ -56,6 +55,11 @@ const products = [
     name: 'Fashion Bracelet',
     price: 499,
     icon: '🌟',
+    images: [
+      'https://placehold.co/700x700/fff8e6/b47a12?text=Fashion+Bracelet+1',
+      'https://placehold.co/700x700/fff0aa/171109?text=Fashion+Bracelet+2',
+      'https://placehold.co/700x700/f5c542/171109?text=Fashion+Bracelet+3'
+    ],
     description: 'Adjustable fashion bracelet with golden polish for casual, festive and party looks.',
     inBox: '1 Bracelet',
     traits: 'Skin friendly, lightweight, easy to style',
@@ -75,6 +79,11 @@ const products = [
     name: 'Gold Kada',
     price: 999,
     icon: '✨',
+    images: [
+      'https://placehold.co/700x700/fff8e6/b47a12?text=Gold+Kada+1',
+      'https://placehold.co/700x700/ffe48a/171109?text=Gold+Kada+2',
+      'https://placehold.co/700x700/b47a12/ffffff?text=Gold+Kada+3'
+    ],
     description: 'Traditional kada with a premium golden finish and bold statement appeal.',
     inBox: '1 Kada',
     traits: 'Long lasting shine, smooth edges, premium finish',
@@ -94,6 +103,11 @@ const products = [
     name: 'Golden Lip Gloss',
     price: 349,
     icon: '💄',
+    images: [
+      'https://placehold.co/700x700/fff8e6/b47a12?text=Lip+Gloss+1',
+      'https://placehold.co/700x700/ffd6df/171109?text=Lip+Gloss+2',
+      'https://placehold.co/700x700/f5c542/171109?text=Lip+Gloss+3'
+    ],
     description: 'Glossy lip finish with comfortable texture for everyday touch-ups.',
     inBox: '1 Lip Gloss',
     traits: 'Long wearing, smooth texture, glossy extension',
@@ -113,6 +127,11 @@ const products = [
     name: 'Glow Compact',
     price: 649,
     icon: '🌸',
+    images: [
+      'https://placehold.co/700x700/fff8e6/b47a12?text=Glow+Compact+1',
+      'https://placehold.co/700x700/fce7f3/171109?text=Glow+Compact+2',
+      'https://placehold.co/700x700/f5c542/171109?text=Glow+Compact+3'
+    ],
     description: 'Compact face makeup palette for a clean glow and quick finishing touch.',
     inBox: '1 Makeup Compact',
     traits: 'Velvet fine texture, silky blend, travel friendly',
@@ -132,6 +151,11 @@ const products = [
     name: 'Elegant Handbag',
     price: 1499,
     icon: '👜',
+    images: [
+      'https://placehold.co/700x700/fff8e6/b47a12?text=Elegant+Handbag+1',
+      'https://placehold.co/700x700/e8c99b/171109?text=Elegant+Handbag+2',
+      'https://placehold.co/700x700/b47a12/ffffff?text=Elegant+Handbag+3'
+    ],
     description: 'Spacious handbag with elegant styling for office, daily and outing use.',
     inBox: '1 Handbag',
     traits: 'Premium look, roomy storage, comfortable handle',
@@ -151,6 +175,11 @@ const products = [
     name: 'Party Clutch Bag',
     price: 1199,
     icon: '👛',
+    images: [
+      'https://placehold.co/700x700/fff8e6/b47a12?text=Party+Clutch+1',
+      'https://placehold.co/700x700/ffe48a/171109?text=Party+Clutch+2',
+      'https://placehold.co/700x700/f5c542/171109?text=Party+Clutch+3'
+    ],
     description: 'Compact party clutch designed to pair beautifully with festive outfits.',
     inBox: '1 Clutch Bag',
     traits: 'Lightweight, party ready, elegant shine',
@@ -170,6 +199,11 @@ const products = [
     name: 'Classic Women Watch',
     price: 1299,
     icon: '⌚',
+    images: [
+      'https://placehold.co/700x700/fff8e6/b47a12?text=Classic+Watch+1',
+      'https://placehold.co/700x700/e5e7eb/171109?text=Classic+Watch+2',
+      'https://placehold.co/700x700/f5c542/171109?text=Classic+Watch+3'
+    ],
     description: 'Classic analog watch with polished details for everyday elegance.',
     inBox: '1 Watch',
     traits: 'Comfort strap, clean dial, daily wear design',
@@ -189,6 +223,11 @@ const products = [
     name: 'Crystal Party Watch',
     price: 1699,
     icon: '💎',
+    images: [
+      'https://placehold.co/700x700/fff8e6/b47a12?text=Crystal+Watch+1',
+      'https://placehold.co/700x700/fce7f3/171109?text=Crystal+Watch+2',
+      'https://placehold.co/700x700/b47a12/ffffff?text=Crystal+Watch+3'
+    ],
     description: 'Crystal-style party watch with sparkle detail for special occasions.',
     inBox: '1 Watch',
     traits: 'Sparkling dial, premium finish, comfortable fit',
@@ -205,6 +244,7 @@ const products = [
 
 let selectedCategoryId = null;
 let selectedSubcategoryId = null;
+const productImageIndexes = {};
 let cart = normalizeCart(JSON.parse(localStorage.getItem('cart') || '[]'));
 
 function normalizeCart(savedCart) {
@@ -294,6 +334,67 @@ function renderSubcategories() {
 }
 
 
+
+function getProductImages(product) {
+  return Array.isArray(product.images) && product.images.length > 0 ? product.images : [];
+}
+
+function getProductImageIndex(product) {
+  const images = getProductImages(product);
+  const currentIndex = productImageIndexes[product.id] || 0;
+  return images.length ? currentIndex % images.length : 0;
+}
+
+function renderProductImageSlider(product) {
+  const images = getProductImages(product);
+  if (!images.length) {
+    return `<div class="product-icon product-image-fallback" aria-hidden="true">${product.icon}</div>`;
+  }
+
+  const activeIndex = getProductImageIndex(product);
+  const activeImage = images[activeIndex];
+  const controls = images.length > 1 ? `
+    <button class="slider-btn prev" type="button" onclick="changeProductImage(${product.id}, -1)" aria-label="Previous image for ${product.name}">‹</button>
+    <button class="slider-btn next" type="button" onclick="changeProductImage(${product.id}, 1)" aria-label="Next image for ${product.name}">›</button>
+  ` : '';
+  const dots = images.length > 1 ? `
+    <div class="slider-dots" aria-label="Choose image for ${product.name}">
+      ${images.map((_, index) => `
+        <button class="slider-dot ${index === activeIndex ? 'active' : ''}" type="button" onclick="selectProductImage(${product.id}, ${index})" aria-label="Show image ${index + 1} for ${product.name}"></button>
+      `).join('')}
+    </div>
+  ` : '';
+
+  return `
+    <div class="product-slider">
+      <img src="${activeImage}" alt="${product.name} image ${activeIndex + 1}" loading="lazy">
+      ${controls}
+      ${dots}
+    </div>
+  `;
+}
+
+function changeProductImage(productId, direction) {
+  const product = products.find(item => item.id === productId);
+  if (!product) return;
+  const images = getProductImages(product);
+  if (images.length <= 1) return;
+
+  const currentIndex = getProductImageIndex(product);
+  productImageIndexes[productId] = (currentIndex + direction + images.length) % images.length;
+  renderProducts();
+}
+
+function selectProductImage(productId, imageIndex) {
+  const product = products.find(item => item.id === productId);
+  if (!product) return;
+  const images = getProductImages(product);
+  if (!images[imageIndex]) return;
+
+  productImageIndexes[productId] = imageIndex;
+  renderProducts();
+}
+
 function renderProductDetails(product) {
   return `
     <div class="product-details">
@@ -348,8 +449,7 @@ function renderProducts() {
 
   productGrid.innerHTML = filteredProducts.map((product, index) => `
     <article class="card product-card" style="animation-delay:${index * 70}ms">
-      <image src="${product.icon}" alt="${product.name} icon" class="category-icon" aria-hidden="true">
-
+      ${renderProductImageSlider(product)}
       <h3>${product.name}</h3>
       <p>${product.description}</p>
       <p class="price">₹${product.price}</p>
