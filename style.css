@@ -7,7 +7,6 @@
   --muted:#6c5a35;
   --shadow:0 18px 45px rgba(91,62,9,.18);
 }
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#fffaf0 0%,#fff 55%,#fff6d8 100%);color:var(--dark)}

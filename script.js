@@ -347,7 +347,8 @@ function renderProducts() {
 
   productGrid.innerHTML = filteredProducts.map((product, index) => `
     <article class="card product-card" style="animation-delay:${index * 70}ms">
-      <div class="product-icon" aria-hidden="true">${product.icon}</div>
+      <image src="${product.icon}" alt="${product.name} icon" class="category-icon" aria-hidden="true">
+
       <h3>${product.name}</h3>
       <p>${product.description}</p>
       <p class="price">₹${product.price}</p>
