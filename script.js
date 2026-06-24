@@ -2,14 +2,13 @@ const WHATSAPP_NUMBER = '918796260625'; // Replace with your WhatsApp business n
 
 const categories = [
   {
-    id: 'bracelet-kada',
-    name: 'Bracelet & Kada',
+    id: 'homedecor',
+    name: 'Home Decor & Design',
     tagline: 'Statement wristwear for daily and party wear.',
     image: 'linear-gradient(135deg, rgba(255,245,196,.95), rgba(245,197,66,.9)), radial-gradient(circle at 30% 30%, #fff 0 12%, transparent 13%)',
     icon: '💫',
     subcategories: [
-      { id: 'bracelets', name: 'Bracelets', description: 'Charm, chain and fashion bracelets.' },
-      { id: 'kada', name: 'Kada', description: 'Bold kada styles with golden shine.' }
+      { id: 'mug', name: 'Mug', description: 'Best and fashion .' },
     ]
   },
   {
@@ -57,10 +56,7 @@ const products = [
     icon: '🌟',
     images: [
       'https://res.cloudinary.com/shopviewmohan/image/upload/s--llOFI0H4--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/imm_nyf2e0.png',
-      'https://res.cloudinary.com/shopviewmohan/image/upload/s--llOFI0H4--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/imm_nyf2e0.png',
-      'https://res.cloudinary.com/shopviewmohan/image/upload/s--llOFI0H4--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/imm_nyf2e0.png',
-      'https://placehold.co/700x700/fff0aa/171109?text=Fashion+Bracelet+2',
-      'https://placehold.co/700x700/f5c542/171109?text=Fashion+Bracelet+3'
+      'https://res.cloudinary.com/shopviewmohan/image/upload/s--OMPKeBmt--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/fdedf_ah85gl.jpg'
     ],
 
     description: 'Adjustable fashion bracelet with golden polish for casual, festive and party looks.',
@@ -76,30 +72,62 @@ const products = [
     ]
   },
   {
-    id: 1,
-    categoryId: 'makeup',
-    subcategoryId: 'face-makeup',
-    name: 'Viral makeup book, lipstick, blush, eyeshadow',
-    price: 750,
+    id: 2,
+    categoryId: 'homedecor',
+    subcategoryId: 'mug',
+    name: 'Mug, 200 mug , korean mug',
+    price: 200,
     icon: '🌟',
     images: [
-      'https://res.cloudinary.com/shopviewmohan/image/upload/s--llOFI0H4--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/imm_nyf2e0.png',
-      'https://res.cloudinary.com/shopviewmohan/image/upload/s--llOFI0H4--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/imm_nyf2e0.png',
-      'https://res.cloudinary.com/shopviewmohan/image/upload/s--llOFI0H4--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/imm_nyf2e0.png',
-      'https://placehold.co/700x700/fff0aa/171109?text=Fashion+Bracelet+2',
-      'https://placehold.co/700x700/f5c542/171109?text=Fashion+Bracelet+3'
+      'https://res.cloudinary.com/shopviewmohan/image/upload/s--bJ0dT4yd--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/efefe_spstue.jpg',
+      'https://res.cloudinary.com/shopviewmohan/image/upload/s--wrYxO9ZD--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/fef_xsywts.jpg',
+      'https://res.cloudinary.com/shopviewmohan/image/upload/s--ouwiNA36--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/fe_e4xltx.jpg',
+      'https://res.cloudinary.com/shopviewmohan/image/upload/s--UB84DNUX--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/22_l8rvba.jpg'
+    
+
     ],
 
-    description: 'Adjustable fashion bracelet with golden polish for casual, festive and party looks.',
-    inBox: '1 Bracelet',
+    description: '⁠Made from high-quality glass \n'+
+'•⁠  ⁠Capacity: 200 ml \n'+
+'•⁠  ⁠Lightweight and portable design \n'+
+'•⁠  ⁠Suitable for hot and cold beverages \n'+
+'•⁠  ⁠Easy to carry and use \n'+
+'•⁠  ⁠Perfect for coffee, juice, water, smoothies, and other drinks \n'+
+'•⁠  ⁠Ideal for summer refreshment \n'+
+'•⁠  ⁠Elegant and modern appearance \n'+
+'•⁠  ⁠Easy to clean and maintain \n' +
+'Package Includes: \n' +
+
+'•⁠  ⁠1 × Glass Mug \n' +
+'•⁠  ⁠1 × Lid \n' +
+'•⁠  ⁠1 × Reusable Straw \n' +
+'Ideal For: Home, Office, Travel, Café, and Gifting.',
+    inBox: '1 ',
     traits: 'Skin friendly, lightweight, easy to style',
     specs: [
       ['Material', 'Alloy'],
-      ['Color', 'Golden'],
-      ['Size', 'Adjustable'],
-      ['Occasion', 'Daily/Party'],
-      ['Care', 'Keep dry'],
-      ['Warranty', 'No']
+    ]
+  },
+  {
+    id: 2,
+    categoryId: 'makeup',
+    subcategoryId: 'lip-makeup',
+    name: 'Color stroke lipstick',
+    price: 100,
+    icon: '🌟',
+    images: [
+'https://res.cloudinary.com/shopviewmohan/image/upload/s--oW8nLrZ8--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-06-24_at_18.17.51_g2axje.jpg',
+'https://res.cloudinary.com/shopviewmohan/image/upload/s--GE7KUaTe--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-06-24_at_18.17.51_1_u1vtmt.jpg',
+'https://res.cloudinary.com/shopviewmohan/image/upload/s--JfP-vDMW--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-06-24_at_18.17.51_2_eolmam.jpg',
+'https://res.cloudinary.com/shopviewmohan/image/upload/s--tK46KfnE--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-06-24_at_18.17.52_by32bs.jpg',
+
+    ],
+
+    description: '',
+    inBox: '1 ',
+    traits: 'Skin friendly, lightweight, easy to style',
+    specs: [
+      ['Item Form', 'Matte'],
     ]
   },
 ];
