@@ -55,6 +55,7 @@ const products = [
     price: 750,
     icon: '🌟',
     images: [
+      'https://res.cloudinary.com/shopviewmohan/image/upload/s--3k3rHWPG--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/ChatGPT_Image_Jun_25_2026_12_55_24_PM_gbkogb.png',
       'https://res.cloudinary.com/shopviewmohan/image/upload/s--llOFI0H4--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/imm_nyf2e0.png',
       'https://res.cloudinary.com/shopviewmohan/image/upload/s--OMPKeBmt--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/fdedf_ah85gl.jpg'
     ],
