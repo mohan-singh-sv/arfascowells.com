@@ -51,31 +51,40 @@ const products = [
     id: 1,
     categoryId: 'makeup',
     subcategoryId: 'face-makeup',
-    name: 'Viral makeup book, lipstick, blush, eyeshadow',
+    name: 'Viral Makeup Book, Lipstick, Blush & Eyeshadow',
     price: 750,
     icon: '🌟',
     images: [
       'https://res.cloudinary.com/shopviewmohan/image/upload/s--llOFI0H4--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/imm_nyf2e0.png',
       'https://res.cloudinary.com/shopviewmohan/image/upload/s--OMPKeBmt--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/fdedf_ah85gl.jpg'
     ],
-
-    description: 'Adjustable fashion bracelet with golden polish for casual, festive and party looks.',
-    inBox: '1 Bracelet',
-    traits: 'Skin friendly, lightweight, easy to style',
+    description:
+      '✨ All-in-One Viral Makeup Book\n' +
+      '• Includes Lipsticks, Blush, Eyeshadows & Face Makeup Essentials\n' +
+      '• Compact and travel-friendly design\n' +
+      '• Smooth and blendable texture\n' +
+      '• Suitable for everyday and party makeup\n' +
+      '• Perfect for beginners and professionals\n' +
+      '• Long-lasting vibrant shades\n' +
+      'Package Includes:\n' +
+      '• 1 × Makeup Book Palette',
+    inBox: '1',
+    traits: 'Travel-friendly, lightweight, easy to apply, suitable for all skin types',
     specs: [
-      ['Material', 'Alloy'],
-      ['Color', 'Golden'],
-      ['Size', 'Adjustable'],
-      ['Occasion', 'Daily/Party'],
-      ['Care', 'Keep dry'],
-      ['Warranty', 'No']
+      ['Product Type', 'Makeup Book'],
+      ['Includes', 'Lipstick, Blush, Eyeshadow'],
+      ['Finish', 'Matte & Shimmer'],
+      ['Skin Type', 'All Skin Types'],
+      ['Usage', 'Daily & Party Makeup'],
+      ['Country of Origin', 'Imported']
     ]
   },
+
   {
     id: 2,
     categoryId: 'homedecor',
     subcategoryId: 'mug',
-    name: 'Mug, 200 mug , korean mug',
+    name: '200ml Korean Glass Mug with Lid & Straw',
     price: 90,
     icon: '🌟',
     images: [
@@ -83,53 +92,68 @@ const products = [
       'https://res.cloudinary.com/shopviewmohan/image/upload/s--wrYxO9ZD--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/fef_xsywts.jpg',
       'https://res.cloudinary.com/shopviewmohan/image/upload/s--ouwiNA36--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/fe_e4xltx.jpg',
       'https://res.cloudinary.com/shopviewmohan/image/upload/s--UB84DNUX--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/22_l8rvba.jpg'
-    
-
     ],
-
-    description: '⁠Made from high-quality glass \n'+
-'•⁠  ⁠Capacity: 200 ml \n'+
-'•⁠  ⁠Lightweight and portable design \n'+
-'•⁠  ⁠Suitable for hot and cold beverages \n'+
-'•⁠  ⁠Easy to carry and use \n'+
-'•⁠  ⁠Perfect for coffee, juice, water, smoothies, and other drinks \n'+
-'•⁠  ⁠Ideal for summer refreshment \n'+
-'•⁠  ⁠Elegant and modern appearance \n'+
-'•⁠  ⁠Easy to clean and maintain \n' +
-'Package Includes: \n' +
-
-'•⁠  ⁠1 × Glass Mug \n' +
-'•⁠  ⁠1 × Lid \n' +
-'•⁠  ⁠1 × Reusable Straw \n' +
-'Ideal For: Home, Office, Travel, Café, and Gifting.',
-    inBox: '1 ',
-    traits: 'Skin friendly, lightweight, easy to style',
+    description:
+      '✨ Premium Korean Style Glass Mug\n' +
+      '• Made from high-quality transparent glass\n' +
+      '• Capacity: 200ml\n' +
+      '• Comes with matching lid and reusable straw\n' +
+      '• Suitable for hot and cold beverages\n' +
+      '• Elegant, lightweight and durable\n' +
+      '• Easy to clean and reusable\n' +
+      '• Perfect for coffee, tea, juice, smoothies and water\n' +
+      'Ideal for home, office, café and gifting.\n\n' +
+      'Package Includes:\n' +
+      '• 1 × Glass Mug\n' +
+      '• 1 × Lid\n' +
+      '• 1 × Reusable Straw',
+    inBox: '1 Set',
+    traits: 'Premium glass, reusable, eco-friendly, stylish, easy to clean',
     specs: [
-      ['Material', 'Alloy'],
+      ['Material', 'Glass'],
+      ['Capacity', '200ml'],
+      ['Includes', 'Mug, Lid & Straw'],
+      ['Suitable For', 'Hot & Cold Drinks'],
+      ['Reusable', 'Yes'],
+      ['Microwave Safe', 'No']
     ]
   },
+
   {
-    id: 2,
+    id: 3,
     categoryId: 'makeup',
     subcategoryId: 'lip-makeup',
-    name: 'Color stroke lipstick',
+    name: 'Color Stroke Matte Lipstick',
     price: 100,
     icon: '🌟',
     images: [
-'https://res.cloudinary.com/shopviewmohan/image/upload/s--oW8nLrZ8--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-06-24_at_18.17.51_g2axje.jpg',
-'https://res.cloudinary.com/shopviewmohan/image/upload/s--GE7KUaTe--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-06-24_at_18.17.51_1_u1vtmt.jpg',
-'https://res.cloudinary.com/shopviewmohan/image/upload/s--JfP-vDMW--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-06-24_at_18.17.51_2_eolmam.jpg',
-'https://res.cloudinary.com/shopviewmohan/image/upload/s--tK46KfnE--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-06-24_at_18.17.52_by32bs.jpg',
-
+      'https://res.cloudinary.com/shopviewmohan/image/upload/s--oW8nLrZ8--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-06-24_at_18.17.51_g2axje.jpg',
+      'https://res.cloudinary.com/shopviewmohan/image/upload/s--GE7KUaTe--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-06-24_at_18.17.51_1_u1vtmt.jpg',
+      'https://res.cloudinary.com/shopviewmohan/image/upload/s--JfP-vDMW--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-06-24_at_18.17.51_2_eolmam.jpg',
+      'https://res.cloudinary.com/shopviewmohan/image/upload/s--tK46KfnE--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-06-24_at_18.17.52_by32bs.jpg'
     ],
-
-    description: '',
-    inBox: '1 ',
-    traits: 'Skin friendly, lightweight, easy to style',
+    description:
+      '💄 Color Stroke Matte Lipstick\n' +
+      '• Rich, highly pigmented color\n' +
+      '• Smooth and creamy application\n' +
+      '• Lightweight and comfortable to wear\n' +
+      '• Long-lasting matte finish\n' +
+      '• Non-sticky formula\n' +
+      '• Suitable for everyday and party wear\n' +
+      '• Available in beautiful trendy shades\n\n' +
+      'Package Includes:\n' +
+      '• 1 × Color Stroke Matte Lipstick',
+    inBox: '1',
+    traits: 'Long-lasting, highly pigmented, lightweight, smooth finish',
     specs: [
-      ['Item Form', 'Matte'],
+      ['Item Form', 'Matte Stick'],
+      ['Finish', 'Matte'],
+      ['Skin Type', 'All Skin Types'],
+      ['Coverage', 'Full'],
+      ['Long Lasting', 'Yes'],
+      ['Net Quantity', '1 Piece']
     ]
-  },
+  }
 ];
 
 let selectedCategoryId = null;
