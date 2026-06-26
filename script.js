@@ -154,7 +154,45 @@ const products = [
       ['Long Lasting', 'Yes'],
       ['Net Quantity', '1 Piece']
     ]
-  }
+  }, 
+  {
+    id: 4,
+    categoryId: 'makeup',
+    subcategoryId: 'lip-makeup',
+    name: 'Cute Korean Style Lip Gloss',
+    price: 120,
+    icon: '🌟',
+    images: [
+      'https://your-image-1.jpg',
+      'https://your-image-2.jpg',
+      'https://your-image-3.jpg',
+      'https://your-image-4.jpg'
+    ],
+    description:
+      '💄 Cute Korean Style Lip Gloss\n' +
+      '• Long-lasting glossy finish\n' +
+      '• Moisturizes and nourishes lips\n' +
+      '• Lightweight and non-sticky formula\n' +
+      '• Smooth one-swipe application\n' +
+      '• Soft, hydrated, and shiny lips\n' +
+      '• Cute kawaii-style, travel-friendly design\n' +
+      '• Perfect for daily use, college, office, and parties\n\n' +
+      '💗 Why You’ll Love It:\n' +
+      'Whether you’re going to college, work, or a party, this lip gloss adds the perfect glossy touch to your look. Keep it in your purse and shine anytime, anywhere!\n\n' +
+      'Package Includes:\n' +
+      '• 1 × Cute Korean Style Lip Gloss',
+    inBox: '1',
+    traits: 'Glossy finish, moisturizing, lightweight, non-sticky, travel-friendly',
+    specs: [
+      ['Item Form', 'Liquid Gloss'],
+      ['Finish', 'Glossy'],
+      ['Skin Type', 'All Skin Types'],
+      ['Coverage', 'Sheer to Medium'],
+      ['Long Lasting', 'Yes'],
+      ['Texture', 'Lightweight & Non-Sticky'],
+      ['Net Quantity', '1 Piece']
+    ]
+  },
 ];
 
 let selectedCategoryId = null;
