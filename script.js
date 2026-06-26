@@ -163,10 +163,8 @@ const products = [
     price: 120,
     icon: '🌟',
     images: [
-      'https://your-image-1.jpg',
-      'https://your-image-2.jpg',
-      'https://your-image-3.jpg',
-      'https://your-image-4.jpg'
+      'https://res.cloudinary.com/shopviewmohan/image/upload/s--l1fjSMps--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-06-26_at_10.35.56_nj9zbt.jpg',
+      'https://res.cloudinary.com/shopviewmohan/image/upload/s--EVVVMDSG--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-06-26_at_10.35.56_1_g9h7ya.jpg'
     ],
     description:
       '💄 Cute Korean Style Lip Gloss\n' +
