@@ -191,6 +191,32 @@ const products = [
       ['Net Quantity', '1 Piece']
     ]
   },
+  {
+    id: 5,
+    categoryId: 'makeup',
+    subcategoryId: 'face-makeup',
+    name: 'TEMPERIA (6 Pcs) Powder & Makeup Puff for Women - Face Foundation Triangle Pizza Puff Blender Sponge Set - Smooth Coverage',
+    price: 100,
+    icon: '🌟',
+    images: [
+'https://res.cloudinary.com/shopviewmohan/image/upload/s--n-mosrJa--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/ddd_nl5fsu.jpg'    ],
+    description:
+      '💄 Cute Korean Style Lip Gloss\n',
+    inBox: '1',
+    traits: 'Glossy finish, moisturizing, lightweight, non-sticky, travel-friendly',
+    specs: [
+      ['Brand', 'Temperia'],
+      ['Colour', 'Multicolour'],
+      ['Item dimensions L x W x H', '6 x 5 x 1 Centimeters'],
+      ['Recommended Uses For Product', 'Precise Makeup Application'],
+      ['Specific Uses For Product', 'Reaching Corners & Small Areas'],
+      ['Shape', 'Triangular'],
+      ['Number of Items', '6'],
+      ['Manufacturer', 'PankyPunnu, PankyPunnu'],
+      ['Net Quantity', '6.0 Count'],
+      ['Item Weight', '40 Grams'],
+    ],
+  },
 ];
 
 let selectedCategoryId = null;
