@@ -235,7 +235,7 @@ const products = [
   },{
     id: 7,
     categoryId: 'women-bags',
-    subcategoryId: 'handbag',
+    subcategoryId: 'handbags',
     name: 'Bag pack of 1',
     price: 850,
     icon: '🌟',
@@ -250,13 +250,13 @@ const products = [
   },{
     id: 8,
     categoryId: 'women-bags',
-    subcategoryId: 'handbag',
+    subcategoryId: 'handbags',
     name: 'Hand Bag Pack of 1',
     price: 950,
     icon: '🌟',
     images: ['https://res.cloudinary.com/shopviewmohan/image/upload/s--Jfv8OTEE--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-07-16_at_09.59.46_ypuggw.jpg','https://res.cloudinary.com/shopviewmohan/image/upload/s--Soqt18QC--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-07-16_at_09.59.47_i08xed.jpg','https://res.cloudinary.com/shopviewmohan/image/upload/s--9-LYZFmH--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-07-16_at_09.59.46_1_mu7rzu.jpg'],
     description:
-      '',
+      'Good ',
     inBox: '1',
     traits: '',
     specs: [
