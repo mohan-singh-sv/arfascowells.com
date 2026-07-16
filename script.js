@@ -224,7 +224,7 @@ const products = [
     name: 'Fancy Pastel Flower Hair Clutcher with Matte Finish | Floral Hair Clutch for Women & Girls',
     price: 320,
     icon: '🌟',
-    images: [''],
+    images: ['https://res.cloudinary.com/shopviewmohan/image/upload/s--BscZhzUV--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/sss_lilbkh.jpg'],
     description:
       '',
     inBox: '1',
