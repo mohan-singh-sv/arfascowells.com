@@ -29,7 +29,7 @@ const categories = [
     image: 'linear-gradient(135deg, rgba(255,248,230,.95), rgba(180,122,18,.78)), radial-gradient(circle at 28% 70%, #fff 0 11%, transparent 12%)',
     icon: '👜',
     subcategories: [
-      { id: 'handbags', name: 'Handbags', description: 'Classic carry bags with premium style.' },
+      { id: 'handbags', name: 'Bags', description: 'Classic carry bags with premium style.' },
       { id: 'party-bags', name: 'Party Bags', description: 'Compact bags for festive outfits.' }
     ]
   },
@@ -215,6 +215,52 @@ const products = [
       ['Manufacturer', 'PankyPunnu, PankyPunnu'],
       ['Net Quantity', '6.0 Count'],
       ['Item Weight', '40 Grams'],
+    ],
+  },
+  {
+    id: 6,
+    categoryId: 'makeup',
+    subcategoryId: 'face-makeup',
+    name: 'Fancy Pastel Flower Hair Clutcher with Matte Finish | Floral Hair Clutch for Women & Girls',
+    price: 320,
+    icon: '🌟',
+    images: [''],
+    description:
+      '',
+    inBox: '1',
+    traits: '',
+    specs: [
+  
+    ],
+  },{
+    id: 7,
+    categoryId: 'women-bags',
+    subcategoryId: 'handbag',
+    name: 'Bag pack of 1',
+    price: 850,
+    icon: '🌟',
+    images: ['https://res.cloudinary.com/shopviewmohan/image/upload/s--TZo81mrC--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-07-16_at_09.58.18_xwtjqt.jpg','https://res.cloudinary.com/shopviewmohan/image/upload/s--2JtQL7w2--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-07-16_at_09.58.17_xnc15c.jpg'],
+    description:
+      '',
+    inBox: '1',
+    traits: '',
+    specs: [
+  
+    ],
+  },{
+    id: 8,
+    categoryId: 'women-bags',
+    subcategoryId: 'handbag',
+    name: 'Hand Bag Pack of 1',
+    price: 950,
+    icon: '🌟',
+    images: ['https://res.cloudinary.com/shopviewmohan/image/upload/s--Jfv8OTEE--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-07-16_at_09.59.46_ypuggw.jpg','https://res.cloudinary.com/shopviewmohan/image/upload/s--Soqt18QC--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-07-16_at_09.59.47_i08xed.jpg','https://res.cloudinary.com/shopviewmohan/image/upload/s--9-LYZFmH--/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1/arfascoweels/WhatsApp_Image_2026-07-16_at_09.59.46_1_mu7rzu.jpg'],
+    description:
+      '',
+    inBox: '1',
+    traits: '',
+    specs: [
+  
     ],
   },
 ];
